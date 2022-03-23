@@ -11,6 +11,18 @@ def _clang_config_file_content(module_maps):
         if ".framework" in path:
             continue
 
+        # Ignore PCH
+        if ".pch" in path:
+            continue
+
+        # Ignore headers
+        if ".h" in path:
+            continue
+
+        # Ignore config files
+        if ".cfg" in path:
+            continue
+
         # Ignore the auto-generated module maps by Bazel. We use our
         # `module_map` rule to generate module maps instead of relying on
         # Bazel's autogerated ones (they are only generated when being directly
@@ -35,9 +47,9 @@ def _get_transitive_module_maps(deps):
     """
     return depset(
         transitive = [
-            dep[apple_common.Objc].module_map
+            dep[CcInfo].compilation_context.headers
             for dep in deps
-            if apple_common.Objc in dep
+            if CcInfo in dep
         ],
     )
 
