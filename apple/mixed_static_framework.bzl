@@ -438,7 +438,6 @@ def mixed_static_framework(
         visibility = visibility,
     )
     umbrella_module_map = name + "Module"
-    objc_deps += [name + "Module"]
 
     objc_module_map_config_name = name + "_module_maps"
     objc_module_map_config(
