@@ -49,6 +49,7 @@ load(":zipper_support.bzl", "swiftmodule_zipper_arg_format")
 _PLATFORM_TO_SWIFTMODULE = {
     "ios_armv7": "arm",
     "ios_arm64": "arm64",
+    "ios_sim_arm64": "arm64",
     "ios_i386": "i386",
     "ios_x86_64": "x86_64",
 }
