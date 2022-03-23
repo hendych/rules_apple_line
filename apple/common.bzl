@@ -14,7 +14,7 @@
 
 # Default attributes
 
-DEFAULT_MINIMUM_OS_VERSION = "11.0"
+DEFAULT_MINIMUM_OS_VERSION = "13.0"
 
 DEFAULT_VISIBILITY = ["//visibility:public"]
 
